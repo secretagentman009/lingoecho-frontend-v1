@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LingoEcho</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="brand">LingoEcho</div>
+    <div class="controls">
+      <button id="themeToggle" aria-label="Toggle Theme">🌙</button>
+      <button id="quipToggle" aria-label="Quip Mode">😄</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Input</h2>
+      <div class="row">
+        <button id="recordBtn">🎙️ Record</button>
+        <input type="file" id="fileInput" accept="audio/*" />
+      </div>
+
+      <div class="toggles">
+        <label><input type="checkbox" id="autoMode" /> Auto Mode</label>
+        <label><input type="checkbox" id="nameTrigger" checked /> Name Trigger (Aaron/Alin)</label>
+      </div>
+
+      <div class="api-url">
+        <label>Backend URL (https):
+          <input type="text" id="apiUrl" placeholder="https://YOUR-BACKEND" />
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Result</h2>
+      <div><strong>Chinese:</strong> <span id="chinese"></span></div>
+      <div><strong>Pinyin:</strong> <span id="pinyin"></span></div>
+      <div class="row">
+        <strong>English:</strong>
+        <button id="ttsBtn" title="Play English aloud">🔊</button>
+      </div>
+      <div id="english"></div>
+
+      <h3>Suggested Replies</h3>
+      <div id="suggestions" class="chips"></div>
+    </section>
+
+    <section class="card muted">
+      <small>Privacy: Audio & text auto-delete in 5 minutes. No login. For personal testing.</small>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
